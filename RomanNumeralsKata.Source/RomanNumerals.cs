@@ -10,23 +10,31 @@ namespace RomanNumeralsKata.Source
     {
         public string Convert(int arabic)
         {
-            if (arabic == 10)
+            var arabicToRoman = new Dictionary<int, string>
             {
-                return "X";
-            }
+                {1, "I"},
+                {2, "II"},
+                {3, "III"},
+                {4, "IV"},
+                {5, "V"},
+                {6, "VI"},
+                {7, "VII"},
+                {8, "VIII"},
+                {9, "IX"},
+                {10, "X"},
+                {11, "XI"},
+                {12, "XII"},
+                {13, "XIII"},
+                {14, "XIV"},
+                {15, "XV"},
+                {16, "XVI"},
+                {17, "XVII"},
+                {18, "XVIII"},
+                {19, "XIX"},
+                {20, "XX"}
+            };
 
-            if (arabic == 2)
-            {
-                return "II";
-            }
-
-            if (arabic == 3)
-            {
-                return "III";
-            }
-
-
-            return "I";
+            return arabicToRoman[arabic];
         }
     }
 }
