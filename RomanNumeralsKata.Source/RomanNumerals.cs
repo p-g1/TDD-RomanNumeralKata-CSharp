@@ -30,6 +30,12 @@ namespace RomanNumeralsKata.Source
             };
 
             var result = string.Empty;
+
+            if (arabic > 8 && arabic < 10)
+            {
+                return arabicToRoman[1] + arabicToRoman[10];
+            }
+
             if (arabic == 10)
             {
                 return "X";
