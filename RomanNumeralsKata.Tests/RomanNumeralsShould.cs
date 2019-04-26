@@ -21,7 +21,7 @@ namespace RomanNumeralsKata.Tests
         [TestCase(7,"VII")]
         [TestCase(8,"VIII")]
         //[TestCase(9,"IX")]
-        //[TestCase(10, "X")]
+        [TestCase(10, "X")]
         //[TestCase(11, "XI")]
         //[TestCase(12, "XII")]
         //[TestCase(13, "XIII")]

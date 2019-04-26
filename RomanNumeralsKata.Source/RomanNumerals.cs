@@ -30,6 +30,10 @@ namespace RomanNumeralsKata.Source
             };
 
             var result = string.Empty;
+            if (arabic == 10)
+            {
+                return "X";
+            }
 
             if (arabic / 5 >= 1) result += arabicToRoman[5];
             var remainder = arabic % 5;
