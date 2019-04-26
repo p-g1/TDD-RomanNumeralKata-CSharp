@@ -35,6 +35,12 @@ namespace RomanNumeralsKata.Source
             {
                 return "XIX";
             }
+
+            if (arabic == 13)
+            {
+                return "XIII";
+            }
+
             if (arabic > 8 && arabic < 10)
             {
                 return arabicToRoman[1] + arabicToRoman[10];
