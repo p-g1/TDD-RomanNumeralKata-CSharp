@@ -38,6 +38,11 @@ namespace RomanNumeralsKata.Source
             if (arabic / 5 >= 1) result += arabicToRoman[5];
             var remainder = arabic % 5;
 
+            if (remainder > 3)
+            {
+                return arabicToRoman[1] + arabicToRoman[5];
+            }
+
             Enumerable.Range(0,remainder).ToList().ForEach( number => result += arabicToRoman[1] );
 
 
