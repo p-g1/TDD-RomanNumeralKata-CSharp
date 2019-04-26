@@ -16,7 +16,7 @@ namespace RomanNumeralsKata.Source
                 //{4, "IV"},
                 {5, "V"},
                 //{9, "IX"},
-                //{10, "X"},
+                {10, "X"},
                 //{11, "XI"},
                 //{12, "XII"},
                 //{13, "XIII"},
@@ -35,8 +35,15 @@ namespace RomanNumeralsKata.Source
                 return "X";
             }
 
+            if (arabic > 10)
+            {
+                return arabicToRoman[10] + arabicToRoman[1];
+            }
+
             if (arabic / 5 >= 1) result += arabicToRoman[5];
             var remainder = arabic % 5;
+
+            
 
             if (remainder > 3)
             {
