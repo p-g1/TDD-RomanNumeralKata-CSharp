@@ -81,14 +81,15 @@ namespace RomanNumeralsKata.Source
 
         private Tuple<int, string> CalculateOneNumeral(int arabic, string existingNumerals)
         {
-            var arabicLocated = 1;
-            var locatedNumeral = _arabicToRoman[arabic];
+            var arabicLocated = 0;
+            var locatedNumeral = string.Empty;
 
             foreach (var kvp in _arabicToRoman)
             {
                 if (kvp.Key == 1)
                 {
                     locatedNumeral = kvp.Value;
+                    arabicLocated = kvp.Key;
                 }
             }
 
