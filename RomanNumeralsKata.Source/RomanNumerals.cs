@@ -82,7 +82,7 @@ namespace RomanNumeralsKata.Source
 
         private Tuple<int, string> CalculateOneNumeral(int arabic, string existingNumerals)
         {
-            return new Tuple<int, string>(1, _arabicToRoman[1]);
+            return new Tuple<int, string>(1, existingNumerals + _arabicToRoman[1]);
         }
 
     }
