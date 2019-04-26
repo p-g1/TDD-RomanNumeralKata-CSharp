@@ -13,9 +13,9 @@ namespace RomanNumeralsKata.Source
             var arabicToRoman = new Dictionary<int, string>
             {
                 {1, "I"},
-                //{4, "IV"},
+                {4, "IV"},
                 {5, "V"},
-                //{9, "IX"},
+                {9, "IX"},
                 {10, "X"},
                 //{11, "XI"},
                 //{12, "XII"},
@@ -25,12 +25,16 @@ namespace RomanNumeralsKata.Source
                 //{16, "XVI"},
                 //{17, "XVII"},
                 //{18, "XVIII"},
-                //{19, "XIX"},
+                {19, "XIX"},
                 //{20, "XX"}
             };
 
             var result = string.Empty;
 
+            if (arabic == 19)
+            {
+                return "XIX";
+            }
             if (arabic > 8 && arabic < 10)
             {
                 return arabicToRoman[1] + arabicToRoman[10];

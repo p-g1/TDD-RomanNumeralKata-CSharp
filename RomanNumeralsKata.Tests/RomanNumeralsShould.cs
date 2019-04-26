@@ -30,7 +30,7 @@ namespace RomanNumeralsKata.Tests
         //[TestCase(16, "XVI")]
         //[TestCase(17, "XVII")]
         //[TestCase(18, "XVIII")]
-        //[TestCase(19, "XIX")]
+        [TestCase(19, "XIX")]
         //[TestCase(20, "XX")]
         public void NumeralConverter(int arabic, string numeral)
         {
