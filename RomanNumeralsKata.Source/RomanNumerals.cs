@@ -84,6 +84,15 @@ namespace RomanNumeralsKata.Source
             var arabicLocated = 1;
             var locatedNumeral = _arabicToRoman[arabic];
 
+            foreach (var kvp in _arabicToRoman)
+            {
+                if (kvp.Key == 1)
+                {
+                    locatedNumeral = kvp.Value;
+                }
+            }
+
+
             return new Tuple<int, string>(arabic - arabicLocated, existingNumerals + locatedNumeral);
         }
 
