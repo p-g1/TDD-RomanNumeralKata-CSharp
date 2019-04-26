@@ -59,6 +59,11 @@ namespace RomanNumeralsKata.Source
                 return arabicToRoman[10] + arabicToRoman[1];
             }
 
+            if (arabic == 1)
+            {
+                return "I";
+            }
+
             if (arabic / 5 >= 1) result += arabicToRoman[5];
             var remainder = arabic % 5;
 
