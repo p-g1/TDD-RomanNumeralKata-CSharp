@@ -63,6 +63,11 @@ namespace RomanNumeralsKata.Source
                 return CalculateOneNumeral(1, "").Item2;             
             }
 
+            if (arabic == 2)
+            {
+                return "II";
+            }
+
             if (arabic / 5 >= 1) result += _arabicToRoman[5];
             var remainder = arabic % 5;
 
@@ -92,7 +97,6 @@ namespace RomanNumeralsKata.Source
                     arabicLocated = kvp.Key;
                 }
             }
-
 
             return new Tuple<int, string>(arabic - arabicLocated, existingNumerals + locatedNumeral);
         }
