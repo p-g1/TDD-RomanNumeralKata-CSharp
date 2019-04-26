@@ -61,8 +61,8 @@ namespace RomanNumeralsKata.Source
 
             if (arabic == 1)
             {
-                //return CalculateOneNumeral
-                return "I";
+                return CalculateOneNumeral(1, "").Item2;
+                
             }
 
             if (arabic / 5 >= 1) result += arabicToRoman[5];
