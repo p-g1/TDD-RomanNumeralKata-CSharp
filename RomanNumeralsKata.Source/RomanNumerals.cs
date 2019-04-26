@@ -29,6 +29,9 @@ namespace RomanNumeralsKata.Source
                 //{20, "XX"}
             };
 
+
+            arabicToRoman = arabicToRoman.OrderByDescending(x => x.Key).ToDictionary(pair => pair.Key, pair => pair.Value);
+
             var result = string.Empty;
 
             if (arabic == 19)
