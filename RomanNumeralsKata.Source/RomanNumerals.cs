@@ -61,6 +61,7 @@ namespace RomanNumeralsKata.Source
 
             if (arabic == 1)
             {
+                //return CalculateOneNumeral
                 return "I";
             }
 
@@ -79,5 +80,11 @@ namespace RomanNumeralsKata.Source
 
             return result;
         }
+
+        private Tuple<int, string> CalculateOneNumeral(int arabic, string existingNumerals)
+        {
+            return new Tuple<int, string>(1, "I");
+        }
+
     }
 }
