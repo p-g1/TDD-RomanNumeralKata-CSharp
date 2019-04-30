@@ -70,6 +70,14 @@ namespace RomanNumeralsKata.Source
                 return step2.Item2;
             }
 
+            if (arabic == 3)
+            {
+                var step1 = CalculateOneNumeral(arabic, "");
+                var step2 = CalculateOneNumeral(step1.Item1, step1.Item2);
+                var step3 = CalculateOneNumeral(step2.Item1, step2.Item2);
+                return step3.Item2;
+            }
+
       
 
             //if (arabic / 5 >= 1) result += _arabicToRoman[5];
