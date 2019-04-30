@@ -65,22 +65,24 @@ namespace RomanNumeralsKata.Source
 
             if (arabic == 2)
             {
-                var step1 = CalculateOneNumeral(1, "");
+                var step1 = CalculateOneNumeral(arabic, "");
                 var step2 = CalculateOneNumeral(step1.Item1, step1.Item2);
                 return step2.Item2;
             }
 
-            if (arabic / 5 >= 1) result += _arabicToRoman[5];
-            var remainder = arabic % 5;
+      
+
+            //if (arabic / 5 >= 1) result += _arabicToRoman[5];
+            //var remainder = arabic % 5;
 
             
 
-            if (remainder > 3)
-            {
-                return _arabicToRoman[1] + _arabicToRoman[5];
-            }
+            //if (remainder > 3)
+            //{
+            //    return _arabicToRoman[1] + _arabicToRoman[5];
+            //}
 
-            Enumerable.Range(0,remainder).ToList().ForEach( number => result += _arabicToRoman[1] );
+            //Enumerable.Range(0,remainder).ToList().ForEach( number => result += _arabicToRoman[1] );
 
 
             return result;
@@ -93,7 +95,7 @@ namespace RomanNumeralsKata.Source
 
             foreach (var kvp in _arabicToRoman)
             {
-                if (kvp.Key == 1)
+                if (kvp.Key <= arabic)
                 {
                     locatedNumeral = kvp.Value;
                     arabicLocated = kvp.Key;
