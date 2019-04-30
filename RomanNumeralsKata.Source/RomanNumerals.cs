@@ -79,6 +79,7 @@ namespace RomanNumeralsKata.Source
                     {
                         locatedNumeral = kvp.Value;
                         arabicLocated = kvp.Key;
+                        break;
                     }
                 }
 
