@@ -67,7 +67,7 @@ namespace RomanNumeralsKata.Source
             {
                 var step1 = CalculateOneNumeral(arabic, "");
                 var step2 = CalculateOneNumeral(step1.Item1, step1.Item2);
-                return step2.Item2;
+                return step1.Item2;
             }
 
             if (arabic == 3)
@@ -75,7 +75,7 @@ namespace RomanNumeralsKata.Source
                 var step1 = CalculateOneNumeral(arabic, "");
                 var step2 = CalculateOneNumeral(step1.Item1, step1.Item2);
                 var step3 = CalculateOneNumeral(step2.Item1, step2.Item2);
-                return step3.Item2;
+                return step1.Item2;
             }
 
       
@@ -101,16 +101,30 @@ namespace RomanNumeralsKata.Source
             var arabicLocated = 0;
             var locatedNumeral = string.Empty;
 
-            foreach (var kvp in _arabicToRoman)
-            {
-                if (kvp.Key <= arabic)
-                {
-                    locatedNumeral = kvp.Value;
-                    arabicLocated = kvp.Key;
-                }
-            }
+            var controlVar = arabic;
 
-            return new Tuple<int, string>(arabic - arabicLocated, existingNumerals + locatedNumeral);
+            var result = string.Empty;
+
+            do
+            {
+                foreach (var kvp in _arabicToRoman)
+                {
+                    if (kvp.Key <= arabic)
+                    {
+                        locatedNumeral = kvp.Value;
+                        arabicLocated = kvp.Key;
+                    }
+                }
+
+                controlVar = controlVar - arabicLocated;
+                result = result + locatedNumeral;
+                
+
+            } while (controlVar != 0);
+
+            
+            return new Tuple<int, string>(0, result);
+
         }
 
     }
