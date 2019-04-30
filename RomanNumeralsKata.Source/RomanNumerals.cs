@@ -58,45 +58,11 @@ namespace RomanNumeralsKata.Source
                 return _arabicToRoman[10] + _arabicToRoman[1];
             }
 
-            if (arabic == 1)
-            {
-                return CalculateOneNumeral(1, "").Item2;             
-            }
 
-            if (arabic == 2)
-            {
-                var step1 = CalculateOneNumeral(arabic, "");
-                var step2 = CalculateOneNumeral(step1.Item1, step1.Item2);
-                return step1.Item2;
-            }
-
-            if (arabic == 3)
-            {
-                var step1 = CalculateOneNumeral(arabic, "");
-                var step2 = CalculateOneNumeral(step1.Item1, step1.Item2);
-                var step3 = CalculateOneNumeral(step2.Item1, step2.Item2);
-                return step1.Item2;
-            }
-
-      
-
-            //if (arabic / 5 >= 1) result += _arabicToRoman[5];
-            //var remainder = arabic % 5;
-
-            
-
-            //if (remainder > 3)
-            //{
-            //    return _arabicToRoman[1] + _arabicToRoman[5];
-            //}
-
-            //Enumerable.Range(0,remainder).ToList().ForEach( number => result += _arabicToRoman[1] );
-
-
-            return result;
+            return CalculateRomanResult(arabic);
         }
 
-        private Tuple<int, string> CalculateOneNumeral(int arabic, string existingNumerals)
+        private string CalculateRomanResult(int arabic)
         {
             var arabicLocated = 0;
             var locatedNumeral = string.Empty;
@@ -118,14 +84,9 @@ namespace RomanNumeralsKata.Source
 
                 controlVar = controlVar - arabicLocated;
                 result = result + locatedNumeral;
-                
-
             } while (controlVar != 0);
 
-            
-            return new Tuple<int, string>(0, result);
-
+            return result;
         }
-
     }
 }
