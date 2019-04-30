@@ -67,8 +67,6 @@ namespace RomanNumeralsKata.Source
             var arabicLocated = 0;
             var locatedNumeral = string.Empty;
 
-            var controlVar = arabic;
-
             var result = string.Empty;
 
             do
@@ -83,9 +81,9 @@ namespace RomanNumeralsKata.Source
                     }
                 }
 
-                controlVar = controlVar - arabicLocated;
+                arabic = arabic - arabicLocated;
                 result = result + locatedNumeral;
-            } while (controlVar != 0);
+            } while (arabic != 0);
 
             return result;
         }
